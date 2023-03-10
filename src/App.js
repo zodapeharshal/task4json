@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Table from "./Component/Table";
+import { useState } from "react";
+import Fab from "@mui/material/Fab";
+import NavigationIcon from "@mui/icons-material/Navigation";
+import FormulaPanel from "./Component/FormulaPanel";
 
 function App() {
+  const [showFormulaPanel, setShowFormulaPanel] = useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <div className="flex h-[90%] ">
+        <div className="h-[85%] ">
+          <Table></Table>
+        </div>
+
+        <div className="h-[85%] w-[40%]">{showFormulaPanel && <FormulaPanel />}</div>
+      </div>
+      <div>
+        <Fab
+          onClick={(e) => setShowFormulaPanel(!showFormulaPanel)}
+          variant="extended"
+          size="medium"
+          color="primary"
+          aria-label="add"
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <NavigationIcon sx={{ mr: 1 }} />
+          Formula
+        </Fab>
+      </div>
+    </>
   );
 }
 
