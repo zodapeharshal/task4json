@@ -6,13 +6,13 @@ import NavigationIcon from "@mui/icons-material/Navigation";
 import FormulaPanel from "./Component/FormulaPanel";
 
 function App() {
-  const [showFormulaPanel, setShowFormulaPanel] = useState(true);
+  const [showFormulaPanel, setShowFormulaPanel] = useState(false);
 
   return (
     <>
       <div className="flex h-[90%] ">
         <div className="h-[85%] ">
-          <Table></Table>
+          <Table fullWidth={showFormulaPanel}></Table>
         </div>
 
         <div className="h-[85%] w-[40%]">{showFormulaPanel && <FormulaPanel />}</div>
