@@ -23,16 +23,7 @@ const FormulaPanel = () => {
 
   const handleContentChange = (event) => {
     console.log(event);
-    // event.preventDefault() ;
-    // event.target.innerHTML()
     setContent(event.target.textContent);
-    // setContent("secy") ;
-    const selection = window.getSelection();
-    const range = document.createRange();
-    range.setStart(inputRef.current.childNodes[0], content.length);
-    range.collapse(true);
-    selection.removeAllRanges();
-    selection.addRange(range);
   };
 
   const addFormulaBox = () => {
@@ -64,7 +55,7 @@ const FormulaPanel = () => {
       <hr></hr>
       <div className="p-3" id="FormulaContainer"></div>
 
-      <div contentEditable={true} value={content} ref={inputRef} onInput={handleContentChange} className="border border-gray-100">{content}</div> 
+      <div contentEditable={true} ref={inputRef} onInput={handleContentChange} className="border border-gray-100"> {selectedOption? selectedOption : ""}  </div> 
        { <DropdownList
           options={options}
           inputRef={inputRef}

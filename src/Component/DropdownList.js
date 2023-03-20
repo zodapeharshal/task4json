@@ -18,7 +18,7 @@ function DropdownList({options, inputRef, onSelect, content, setContent}) {
       else if ( event.key === "Enter"){
         event.preventDefault() ;
         setContent("SECY") ;
-        console.log('sec')
+        console.log('sec C')
       }
     };
     
@@ -36,7 +36,7 @@ function DropdownList({options, inputRef, onSelect, content, setContent}) {
       let range = selection.getRangeAt(0);
       let rect = range.getClientRects()[0];
       const left = rect ? rect.left : 2000 ; 
-      const top = rect ? rect.top : 2000; 
+      const top = rect ? rect.top + 10   : 2000; 
       setPosition({left, top}) ;
     }
   }, [content]);
