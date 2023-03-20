@@ -20,7 +20,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-const Table = () => {
+const Table = ({fullWidth}) => {
   const [headers, setHeaders] = useState([]);
   const [rowData, setRowData] = useState([]);
   const [data, setData] = useState(null);
@@ -546,7 +546,7 @@ const Table = () => {
   return (
     <div
       className="ag-theme-alpine"
-      style={{ height: "95vh", width: "60vw" }}
+      style={{ height: "95vh", width: fullWidth ?  "60vw" : "100vw" }}
     >
       {showModal ? <Modal /> : ""}
       <GridContext.Provider value={{ editingHeaderId, setEditingHeaderId }}>

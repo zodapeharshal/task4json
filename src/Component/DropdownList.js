@@ -55,7 +55,7 @@ function DropdownList({options, inputRef, onSelect, content, setContent}) {
     <ul
       ref={dropdownRef}
       className="dropdown-list"
-      style={{ left: position.left, top: position.top + 20, position: "absolute" }}
+      style={{ left: position.left, top: position.top + 20, position: "relative" }}
     >
       {listItems}
     </ul>
